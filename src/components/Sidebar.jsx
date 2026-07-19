@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 export default function Sidebar({ isCollapsed, setIsCollapsed }) {
+
   const toggleSidebar = () => {
     setIsCollapsed(prev => !prev);
   };
@@ -25,39 +26,73 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
 
   return (
     <aside className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
+
       <div className="sidebar-header">
+
         <div className="logo-container">
           <Zap size={24} strokeWidth={2.5} />
           <span className="logo-text">FlowGen AI</span>
         </div>
-        <button className="sidebar-toggle" onClick={toggleSidebar} aria-label="Toggle Sidebar">
-          {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+
+        <button 
+          className="sidebar-toggle" 
+          onClick={toggleSidebar} 
+          aria-label="Toggle Sidebar"
+        >
+          {isCollapsed ? 
+            <ChevronRight size={18} /> : 
+            <ChevronLeft size={18} />
+          }
         </button>
+
       </div>
 
+
       <nav className="sidebar-nav">
+
         {navItems.map((item) => {
+
           const Icon = item.icon;
+
           return (
-            <NavLink 
-              key={item.path} 
-              to={item.path} 
-              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                `nav-item ${isActive ? 'active' : ''}`
+              }
             >
               <Icon size={20} />
               <span className="nav-text">{item.name}</span>
             </NavLink>
           );
+
         })}
+
       </nav>
 
+
       <div className="sidebar-footer">
-        <div className="user-avatar">SM</div>
-        <div className="user-info">
-          <span className="user-name">Saba Maheen</span>
-          <span className="user-role">Productivity Pro</span>
+
+        <div className="user-avatar">
+          GU
         </div>
+
+        <div className="user-info">
+
+          <span className="user-name">
+            Guest User
+          </span>
+
+          <span className="user-role">
+            Productivity Pro
+          </span>
+
+        </div>
+
       </div>
+
+
     </aside>
   );
 }

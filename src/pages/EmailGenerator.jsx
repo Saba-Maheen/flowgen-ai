@@ -92,23 +92,29 @@ export default function EmailGenerator() {
     }
 
     // 5. Closings
-    let closing;
-    switch (selectedTone) {
-      case 'professional':
-        closing = `Best regards,\n\nSaba Maheen\nFlowGen AI Team`;
-        break;
-      case 'friendly':
-        closing = `Thanks so much,\n\nSaba`;
-        break;
-      case 'formal':
-        closing = `Sincerely yours,\n\nSaba Maheen\nFlowGen AI Platform`;
-        break;
-      case 'casual':
-        closing = `Cheers,\n\nSaba`;
-        break;
-      default:
-        closing = `Regards,\n\nSaba Maheen`;
-    }
+    // 5. Closings
+let closing;
+
+switch (selectedTone) {
+  case 'professional':
+    closing = `Best regards,\n\nFlowGen AI Team`;
+    break;
+
+  case 'friendly':
+    closing = `Thanks so much,\n\nFlowGen AI`;
+    break;
+
+  case 'formal':
+    closing = `Sincerely yours,\n\nFlowGen AI Platform`;
+    break;
+
+  case 'casual':
+    closing = `Cheers,\n\nFlowGen AI`;
+    break;
+
+  default:
+    closing = `Regards,\n\nFlowGen AI Team`;
+}
 
     const body = `${greeting}\n\n${intro}\n\n${instructionsParagraph}\n\n${closing}`;
 

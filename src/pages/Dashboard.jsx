@@ -60,7 +60,7 @@ export default function Dashboard() {
     <div className="dashboard-view">
       <div className="view-header">
         <div className="view-meta">
-          <h2 className="view-title">Welcome back, Saba</h2>
+          <h2 className="view-title">Welcome back, creator</h2>
           <p className="view-subtitle">Here is what is happening with your productivity workspace today.</p>
         </div>
         <div className="view-actions">
