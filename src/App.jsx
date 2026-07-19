@@ -12,7 +12,7 @@ function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/flowgen-ai">
       <div className="app-layout">
         <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
         
